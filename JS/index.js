@@ -190,6 +190,7 @@ const tituloPrincipal = document.querySelector("#titulo-principal");
 let botonesAgregar = document.querySelectorAll(".producto__agregar");
 const numerito = document.querySelector("#numerito");
 
+/// Creamos los productos ///
 
 function cargarProductos(productosElegidos) {
     contenedorProductos.innerHTML = "";
@@ -215,6 +216,10 @@ function cargarProductos(productosElegidos) {
 
 cargarProductos(productos);
 
+
+/* Creamos un forEach para que se filtren los productos de acuerdo a su categoria, así, cada vez que presione el boton,
+por ejemplo, de categoria "pantalones", le muestre solamente los pantalones */
+
 botonesCategorias.forEach( boton => {
     boton.addEventListener("click", (e) => {
 
@@ -235,6 +240,8 @@ botonesCategorias.forEach( boton => {
     })
 })
 
+/// Funcion para que el boton "Agregar" de cada producto, funcione y mande el producto al carrito
+
 function actualizarBotonesAgregar () {
     botonesAgregar = document.querySelectorAll(".producto__agregar");
 
@@ -243,18 +250,19 @@ function actualizarBotonesAgregar () {
     })
 }
 
-let productosEnCarrito;
+/// Creamos su Local Storage
 
-const productosEnCarritoStorage = JSON.parse(localStorage.getItem("productos-en-carrito"));
+let productosEnCarrito;
+let productosEnCarritoStorage = localStorage.getItem("productos-en-carrito");
 
 if (productosEnCarritoStorage) {
-    productosEnCarrito = productosEnCarritoStorage;
+    productosEnCarrito = JSON.parse(productosEnCarritoStorage);
     actualizarNumeritoMenu();
 } else {
     productosEnCarrito = [];
 }
 
-
+/// funcion donde hacemos el push al carrito y agregamos la propiedad de "cantidad" a cada objeto
 
 function agregarAlCarrito(e) {
     const idBoton = e.currentTarget.id;
@@ -272,20 +280,13 @@ function agregarAlCarrito(e) {
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 }
 
+/* Esta funcion es para que el numero que tiene el boton "carrito" se vaya actualizando de acuerdo 
+a cuantos productos tiene en su carrito */
+
 function actualizarNumeritoMenu() {
     let numeritoActualizado = productosEnCarrito.reduce((acumulador, producto) => acumulador + producto.cantidad, 0);
     numerito.innerText = numeritoActualizado;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
