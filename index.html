@@ -17,20 +17,20 @@
             <nav>
                 <ul class="menu">
                     <li>
-                        <button class="boton__menu boton__categoria active"><i class="bi bi-hand-index-thumb-fill"></i>Todos los productos</button>
+                        <button id="todos" class="boton__menu boton__categoria active"><i class="bi bi-hand-index-thumb-fill"></i>Todos los productos</button>
                     </li>
                     <li>
-                        <button class="boton__menu boton__categoria"><i class="bi bi-hand-index-thumb"></i>Abrigos</button>
+                        <button id="abrigos" class="boton__menu boton__categoria"><i class="bi bi-hand-index-thumb"></i>Abrigos</button>
                     </li>
                     <li>
-                        <button class="boton__menu boton__categoria"><i class="bi bi-hand-index-thumb"></i>Remeras</button>
+                        <button id="remeras" class="boton__menu boton__categoria"><i class="bi bi-hand-index-thumb"></i>Remeras</button>
                     </li>
                     <li>
-                        <button class="boton__menu boton__categoria"><i class="bi bi-hand-index-thumb"></i>Pantalones</button>
+                        <button id="pantalones" class="boton__menu boton__categoria"><i class="bi bi-hand-index-thumb"></i>Pantalones</button>
                     </li>
                     <li>
                         <a class="boton__menu boton__carrito" href="./carrito.html">
-                            <i class="bi bi-cart-fill"></i> Carrito <span class="numerito">0</span>
+                            <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
                         </a>
                     </li>
                 </ul>
@@ -40,40 +40,9 @@
             </footer>
         </aside>
         <main class="">
-            <h2 class="titulo__principal">Todos los productos</h2>
-            <div class="contenedor__productos">
-                <div class="producto">
-                    <img class="producto__imagen" src="./img/abrigos/abrigo-01.jpg" alt="">
-                    <div class="producto__detalles">
-                        <h3 class="producto__titulo">abrigo 01</h3>
-                        <p class="producto__precio">$5.000</p>
-                        <button class="producto__agregar">Agregar</button>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img class="producto__imagen" src="./img/abrigos/abrigo-02.jpg" alt="">
-                    <div class="producto__detalles">
-                        <h3 class="producto__titulo">abrigo 02</h3>
-                        <p class="producto__precio">$5.000</p>
-                        <button class="producto__agregar">Agregar</button>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img class="producto__imagen" src="./img/abrigos/abrigo-03.jpg" alt="">
-                    <div class="producto__detalles">
-                        <h3 class="producto__titulo">abrigo 03</h3>
-                        <p class="producto__precio">$5.000</p>
-                        <button class="producto__agregar">Agregar</button>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img class="producto__imagen" src="./img/abrigos/abrigo-04.jpg" alt="">
-                    <div class="producto__detalles">
-                        <h3 class="producto__titulo">abrigo 04</h3>
-                        <p class="producto__precio">$5.000</p>
-                        <button class="producto__agregar">Agregar</button>
-                    </div>
-                </div>
+            <h2 class="titulo__principal" id="titulo-principal">Todos los productos</h2>
+            <div id="contenedor-productos" class="contenedor__productos">
+                <!-- Los productos estan creados desde el JS-->
             </div>
         </main>
     </div>

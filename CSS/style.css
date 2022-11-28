@@ -65,8 +65,6 @@ aside {
 
 
 .boton__menu {
-    /* border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem; */
     color: var(--clr-white);
     background-color: transparent;
     border: 0;
@@ -77,12 +75,12 @@ aside {
     font-weight: 600;
     padding: 1rem;
     font-size: 0.85rem;
+    width: 100%;
 }
 
 .boton__menu.active {
     background-color: var(--clr-white);
     color: var(--clr-main);
-    width: 100%;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     position: relative;
@@ -112,16 +110,7 @@ aside {
     box-shadow: 0 -1rem 0 var(--clr-white);
 }
 
-/* 
-.boton__menu:hover{
-    background-color: var(--clr-white);
-    color: var(--clr-main);
-    position: relative;
-    transition: .5s;
-} */
-
 .bi-hand-index-thumb-fill {
-    color: var(--clr-main);
     transform: rotateZ(90deg);
 }
 
@@ -131,7 +120,19 @@ aside {
 
 .boton__carrito {
     margin-top: 2rem;
-    width: 60%;
+    width: 100%;
+}
+
+.boton__volver {
+    color: var(--clr-white);
+    margin-left: 1rem;
+}
+
+.numerito {
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    padding: .15rem .25rem;
+    border-radius: .3rem;
 }
 
 /****    FOOTER    ****/
@@ -159,7 +160,7 @@ main {
 .contenedor__productos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    gap: 1.8rem;
 }
 
 .producto__imagen {
@@ -201,7 +202,6 @@ main {
     transition: .4s;
 }
 
-
 /********   CARRITO   *********/
 
 .contenedor__carrito {
@@ -210,14 +210,9 @@ main {
     gap: 1.5rem;
 }
 
-.carrito__vacio {
+.carrito__vacio,
+.carrito__comprado {
     color: var(--clr-main);
-    display: none;
-}
-
-.bi-emoji-frown {
-    color: var(--clr-main);
-    display: none;
 }
 
 .carrito__productos {
@@ -281,7 +276,7 @@ main {
     border-top-left-radius: 0.6rem;
     border-bottom-left-radius: 0.6rem;
     text-transform: uppercase;
-    cursor: pointer;
+    gap: .6rem;
 }
 
 .carrito__acciones__comprar {
@@ -293,4 +288,8 @@ main {
     border-bottom-right-radius: 0.6rem;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.disabled {
+    display: none;
 }

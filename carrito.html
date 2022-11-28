@@ -35,50 +35,11 @@
         <main>
             <h2 class="titulo__principal">Carrito</h2>
             <div class="contenedor__carrito">
-                <p class="carrito__vacio">Tu carrito está vacío. <i class="bi bi-emoji-frown"></i></p>
-                <div class="carrito__productos">
-                    <div class="carrito__producto">
-                        <img class="carrito__producto__img" src="./img/abrigos/abrigo-01.jpg" alt="">
-                        <div class="carrito__producto__titulo">
-                            <small>Titulo</small>
-                            <h3>Abrigo 01</h3>
-                        </div>
-                        <div class="carrito__producto__cantidad">
-                            <small>Cantidad</small>
-                            <p>1</p>
-                        </div>
-                        <div class="carrito__producto__precio">
-                            <small>Precio</small>
-                            <p>$5.000</p>
-                        </div>
-                        <div class="carrito__producto__subtototal">
-                            <small>Subtototal</small>
-                            <p>$5.000</p>
-                        </div>
-                        <button class="carrito__producto__eliminar"><i class="bi bi-trash-fill"></i></button>
-                    </div>
-                    <div class="carrito__producto">
-                        <img class="carrito__producto__img" src="./img/abrigos/abrigo-02.jpg" alt="">
-                        <div class="carrito__producto__titulo">
-                            <small>Titulo</small>
-                            <h3>Abrigo 02</h3>
-                        </div>
-                        <div class="carrito__producto__cantidad">
-                            <small>Cantidad</small>
-                            <p>2</p>
-                        </div>
-                        <div class="carrito__producto__precio">
-                            <small>Precio</small>
-                            <p>$4.000</p>
-                        </div>
-                        <div class="carrito__producto__subtototal">
-                            <small>Subtototal</small>
-                            <p>$8.000</p>
-                        </div>
-                        <button class="carrito__producto__eliminar"><i class="bi bi-trash-fill"></i></button>
-                    </div>
+                <p id="carrito-vacio" class="carrito__vacio">Tu carrito está vacío. <i class="bi bi-emoji-frown"></i></p>
+                <div id="carrito-productos" class="carrito__productos disabled">
+                    
                 </div>
-                <div class="carrito__acciones">
+                <div id="carrito-acciones" class="carrito__acciones disabled">
                     <div class="carrito__acciones__izquierda">
                         <button class="carrito__acciones__vaciar">Vaciar carrito</button>
                     </div>
@@ -90,7 +51,7 @@
                         <button class="carrito__acciones__comprar">Comprar ahora</button>
                     </div>
                 </div>
-
+                <div id="carrito-comprado" class="carrito__comprado disabled">Muchas gracias por tu compra! <i class="bi bi-emoji-laughing"></i></div>
             </div>
         </main>
     </div>
