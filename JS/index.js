@@ -246,8 +246,26 @@ function actualizarBotonesAgregar () {
     botonesAgregar = document.querySelectorAll(".producto__agregar");
 
     botonesAgregar.forEach( boton => {
-        boton.addEventListener("click", agregarAlCarrito);
-    })
+        boton.addEventListener("click", agregarAlCarrito)
+    });
+    botonesAgregar.forEach( boton => {
+        boton.addEventListener("click", () => {
+            Toastify({
+                text: "Agregaste un producto",
+                duration: 3000,
+                destination: "./carrito.html",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #2ca84d)",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
+        });
+    });
 }
 
 /// Creamos su Local Storage
@@ -289,23 +307,3 @@ function actualizarNumeritoMenu() {
 }
 
 
-
-
-// Swal.fire({
-//     title: 'Email',
-//     input: 'text',
-//     input: 'text',
-//     inputAttributes: {
-//       autocapitalize: 'off'
-//     },
-//     showCancelButton: true,
-//     confirmButtonText: 'Look up',
-//     showLoaderOnConfirm: true,
-//   }).then((result) => {
-//     if (result.isConfirmed) {
-//       Swal.fire({
-//         title: `${result.value}`,
-//         imageUrl: result.value
-//       })
-//     }
-//   })
