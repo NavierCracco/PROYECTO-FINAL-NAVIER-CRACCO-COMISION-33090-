@@ -156,6 +156,9 @@ function comprar() {
 }
 
 function actualizarNumeritoMenu() {
+
+        numerito.classList.add("disabled");
+
     let numeritoActualizado = productosEnCarrito.reduce((acumulador, producto) => acumulador + producto.cantidad, 0);
     numerito.innerText = numeritoActualizado;
 }
