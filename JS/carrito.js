@@ -1,3 +1,4 @@
+
 let productosEnCarrito = localStorage.getItem("productos-en-carrito");
 productosEnCarrito = JSON.parse(productosEnCarrito);
 
@@ -9,8 +10,10 @@ let botonEliminar = document.querySelector(".carrito__producto__eliminar");
 const botonVaciarCarrito = document.querySelector("#carrito-acciones-vaciar");
 const totalCompra = document.querySelector("#total");
 const botonComprar = document.querySelector("#carrito-acciones-comprar");
-const numerito = document.querySelector("#numerito")
+const numerito = document.querySelector("#numerito");
 
+const ticket = document.querySelector("#ticket-compra");
+const botonTicket = document.querySelector(".boton__pagar");
 /// Creamos una funcion para que cada vez que agregue un producto se actualice su carrito ///
 
 function cargarProductosCarrito() {
@@ -65,12 +68,12 @@ cargarProductosCarrito();
 /// Funcion para que el icono de basura funcione a la hora de eliminar algun producto ///
 
 function actualizarBotonesEliminar() {
-    botonesEliminar = document.querySelectorAll(".carrito__producto__eliminar");
+    botonEliminar = document.querySelectorAll(".carrito__producto__eliminar");
 
-    botonesEliminar.forEach( boton => {
+    botonEliminar.forEach( boton => {
         boton.addEventListener("click", eliminarDelCarrito);
     });
-    botonesEliminar.forEach( boton => {
+    botonEliminar.forEach( boton => {
         boton.addEventListener("click", () => {
             Toastify({
                 text: "Eliminaste un producto",
@@ -145,7 +148,10 @@ function calcularTotal() {
 
 botonComprar.addEventListener("click", comprar);
 
+
 function comprar() {
+    ticket.classList.add("aparece");
+
     productosEnCarrito.length = 0;
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 
@@ -154,6 +160,11 @@ function comprar() {
     carritoAcciones.classList.add("disabled");
     carritoComprado.classList.remove("disabled");
 }
+
+botonTicket.addEventListener("click", () => {
+    ticket.classList.remove("aparece");
+})
+
 
 function actualizarNumeritoMenu() {
 
@@ -164,3 +175,35 @@ function actualizarNumeritoMenu() {
 }
 
 actualizarNumeritoMenu();
+
+
+
+
+//////// MERCADO API //////
+
+// const mercadopago = require("mercadopago");
+
+// configure({
+//     access_token: "TEST-5923283001271890-121417-f5bb7e33f9c8d903809377912403aef2-720591046",
+//   });
+
+// const mercadoApi = async () => {
+//     let preference = {
+//         items: [],
+//         back_urls: {
+//             success: "./index.html/success",
+//             failure: "./index.html/failure",
+//             pending: "./index.html/pending"
+//         },
+//         auto_return: "approved",
+//     };
+
+//     productosEnCarrito.forEach((producto) => {
+//     if(productosEnCarrito.length > 0) {
+
+//         preference.items.push({
+//             title: producto.titulo,
+//             unit_price: producto.precio,
+//             quantity: producto.cantidad,
+//         });
+        

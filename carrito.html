@@ -47,16 +47,56 @@
                     <div class="carrito__acciones__derecha">
                         <div class="carrito__acciones__total">
                             <p>Total: </p>
-                            <p id="total">$13.000</p>
+                            <p id="total"></p>
                         </div>
                         <button id="carrito-acciones-comprar" class="carrito__acciones__comprar">Comprar ahora</button>
                     </div>
                 </div>
+                
                 <div id="carrito-comprado" class="carrito__comprado disabled">Muchas gracias por tu compra! <i class="bi bi-emoji-laughing"></i></div>
-            </div>
-        </main>
-    </div>
 
+            </div>    
+        </main>
+        <div id="ticket-compra" class="ticket">
+            <div class="ticket__arriba">
+                <h3 class="titulo__ticket">Ticket</h3>
+                <h4 class="ticket__logo">Fiuuumba 2.0</h4>
+                <div class="informacion__ticket">
+                    <p>Fecha: 1/1/2023</p>
+                    <p>N° de factura: 001</p>
+                </div>
+            </div>
+
+            <div id="ticket-abajo" class="ticket__abajo">
+                <div id="col" class="col">
+                    <small class="titulo__pequeño">Cant.</small>
+                    <p class="ticket__productos">1</p>
+                    <p class="ticket__productos">1</p>
+                </div>
+                
+                <div id="col" class="col">
+                    <small class="titulo__pequeño">Productos</small>
+                        <p class="ticket__productos__lista">remera</p>
+                        <p class="ticket__productos__lista">abrigo</p>
+                        <p class="ticket__productos__lista">pantalon</p>
+                </div>
+                <div id="col" class="col ticket__precio">
+                    <div>
+                        <small class="titulo__pequeño">precio</small>
+                        <p class="ticket__productos">1000</p>
+                    </div>
+                    <div class="ticket__total">
+                        <p>Total:</p>
+                        <p>$ 1000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor__boton__pagar"><button class="boton__pagar">Pagar</button></div>
+
+        </div>
+    </div>
+    <!-- <div class="cho-container"></div>
+    <script src="https://sdk.mercadopago.com/js/v2"></script> -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./JS/carrito.js"></script>

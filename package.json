@@ -1,0 +1,6 @@
+{
+  "type": "commonjs",
+  "dependencies": {
+    "mercadopago": "^1.5.14"
+  }
+}
