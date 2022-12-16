@@ -150,7 +150,6 @@ botonComprar.addEventListener("click", comprar);
 
 
 function comprar() {
-    ticket.classList.add("aparece");
 
     productosEnCarrito.length = 0;
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
@@ -160,11 +159,6 @@ function comprar() {
     carritoAcciones.classList.add("disabled");
     carritoComprado.classList.remove("disabled");
 }
-
-botonTicket.addEventListener("click", () => {
-    ticket.classList.remove("aparece");
-})
-
 
 function actualizarNumeritoMenu() {
 
@@ -205,5 +199,4 @@ actualizarNumeritoMenu();
 //             title: producto.titulo,
 //             unit_price: producto.precio,
 //             quantity: producto.cantidad,
-//         });
-        
+//         });      
