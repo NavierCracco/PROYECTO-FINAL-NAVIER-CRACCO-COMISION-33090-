@@ -290,9 +290,137 @@ main {
     cursor: pointer;
 }
 
+.close__menu {
+    display: none;
+}
+
+.header__mobile {
+    display: none;
+}
+
 .disabled {
     display: none;
 }
+
+
+/**** MEDIA QUERIES ****/
+
+@media screen and (max-width: 600px) {
+
+    .wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    aside {
+        width: 60%;
+        position: fixed;
+        z-index: 9;
+        background-color: var(--clr-main);
+        left: 0;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .75);
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+        padding-left: 1rem;
+        transition: .3s;
+    }
+
+    .aside__visible {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    aside .logo {
+        margin: 0;
+        position: 0;
+        position: relative;
+    }
+
+    aside header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .boton__menu.active::before,
+    .boton__menu.active::after {
+        display: none;
+    }
+
+    main {
+        margin: 1rem;
+        margin-top: 0;
+        padding: 1.5rem;
+    }
+
+    .contenedor__productos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .header__mobile {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header__mobile .logo {
+        color: var(--clr-white);
+        margin: 0;
+    }
+
+    .open__menu, .close__menu {
+        background-color: transparent;
+        color: var(--clr-white);
+        border: 0;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .close__menu {
+        display: block;
+    }
+
+
+    .carrito__producto {
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding-right: .8rem;
+    }
+
+    .carrito__acciones {
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+
+    .carrito__producto__titulo {
+        padding-right: 2rem;
+    }
+
+    .carrito__producto__cantidad {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  /* *** TICKET *** */
 
